@@ -30,3 +30,5 @@ the core is not my idea, specifically features 1-9. However, with the following 
 
 - (3:30) It exists? I guess? More later.
 - (4:30) Was away a bit, now html sort of has the core, and there's a bit of css.
+- (5:40) Yay I added some localstorage and cookies stuff, because don't we all want simpler saving stuff?
+- (note) I'll get gist saving at some point if I can figure out how to and how to make it more seamlessly work.
