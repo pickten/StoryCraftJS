@@ -4,7 +4,9 @@ A JS port of StoryCraft, as found
 
 **Note:** While this is entirely my code (not counting libraries, etc., which are either loaded from another site
 or are in a subfolder), 
-the core is not my idea, specifically features 1-9. However, with the following exceptions, features 10 and on are mine:
+the core is not my idea, specifically features 1-9. They are from the original Storycraft, which this is an attempt to
+both port and possibly expand on.
+In particular, with the following exceptions, features 10 and on are mine:
 
 (none currently)
 
@@ -22,7 +24,8 @@ the core is not my idea, specifically features 1-9. However, with the following 
 7. Notes
 8. Note viewer
 9. Auto-highlighting
-10. Maybe some sort of "$AnchorName=Value" syntax to boost the power of notes? 
+10. Maybe some sort of "$AnchorName=Value" syntax to boost the power of notes?
+11. Possible gist-saving (and loading? No idea how to automatically use gist)
 
 ## Changelog:
 
