@@ -2,11 +2,31 @@ function save(name){}
 function load(name){}
 function download(name){}
 function open(name,text){}
-
-var position = []
-var anchors = {}
-var docs = {0:""}
-var current = 0 //To signify that it hasn't been specified.
+var anchors
+var docs
+var current
+function defVars(){var position = []
+  anchors = {}
+  docs = {0:''}
+  for(var i in localStorage){
+    if(i.charAt(0)=='d'){
+      var j=i.substring(1);docs[j]=localStorage[i]
+    }}
+  current = localStorage['cur']||0 //To signify that it hasn't been specified.
+}
+function defWithCookie(){
+  anchors = {}
+  docs={0:''}
+  current = 0
+  var key=docCookies.keys()
+  for(var i in key){
+    if(i=='cur'){
+      current=docCookies.getItem(i)
+    } else {
+      docs[i.substring(1)]=docCookies.getItem(i)
+    }
+  }
+}
 
 function getAnchors(text){
   
