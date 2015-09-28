@@ -2,7 +2,8 @@
 A JS port of StoryCraft, as found [here](https://www.reddit.com/r/writing/comments/3mhd3s/storycraft_a_simple_story_writing_software_ive/)
 
 **Note:** While this is entirely my code (not counting libraries, etc.), 
-I claim no part of this as my own idea, except any explicitly stated here:
+The core is not my idea, specifically features 1-9. However, with the following exceptions, the rest of the anchor/markup
+syntax is mine:
 
 (none currently)
 
