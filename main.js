@@ -9,7 +9,10 @@ var position=[]
 function defVars(){
   position = []
   anchors = {}
-  docs = {0:''}
+  docs = {0:{
+    text:'',
+    notes: ''
+  }}
   for(var i in localStorage){
     if(i.charAt(0)=='t'){
       var j=i.substring(1);
@@ -24,7 +27,7 @@ function defVars(){
 }
 function defWithCookie(){
   anchors = {}
-  docs={0:''}
+  docs={0:{text:'',notes:''}}
   current = 0
   var key=docCookies.keys()
   for(var i in key){
