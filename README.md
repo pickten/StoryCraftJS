@@ -27,4 +27,5 @@ syntax is mine:
 
 ### 9/28/15: Initial commit (v0.0)
 
-It exists? I guess? More later.
+- (3:30) It exists? I guess? More later.
+- (4:30) Was away a bit, now html sort of has the core, and there's a bit of css.
