@@ -1,1 +1,19 @@
-
+#Container {
+  width: 100%;
+}
+#Explorer {
+  width: 20%;
+  float: left;
+}
+#Main {
+  width: 60%;
+  float: left;
+}
+#Note {
+  width: 25%;
+  float: left;
+}
+#Notes {
+  width: 15%;
+  float: left;
+}
