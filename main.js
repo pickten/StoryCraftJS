@@ -5,13 +5,21 @@ function open(name,text){}
 var anchors
 var docs
 var current
-function defVars(){var position = []
+var position=[]
+function defVars(){
+  position = []
   anchors = {}
   docs = {0:''}
   for(var i in localStorage){
-    if(i.charAt(0)=='d'){
-      var j=i.substring(1);docs[j]=localStorage[i]
-    }}
+    if(i.charAt(0)=='t'){
+      var j=i.substring(1);
+      docs[j].text=localStorage[i]
+    }
+    if(i.charAt(0)=='a'){
+      var j=i.substring(1);
+      docs[j].notes=localStorage[i]
+    }
+  }
   current = localStorage['cur']||0 //To signify that it hasn't been specified.
 }
 function defWithCookie(){
@@ -22,8 +30,11 @@ function defWithCookie(){
   for(var i in key){
     if(i=='cur'){
       current=docCookies.getItem(i)
-    } else {
-      docs[i.substring(1)]=docCookies.getItem(i)
+    } else if(i.charAt(0)=='t') {
+      docs[i.substring(1)].text=docCookies.getItem(i)
+    } else if(i.charAt(0)=='a'){
+      var j=i.substring(1);
+      docs[j].notes=localStorage[i]
     }
   }
 }
