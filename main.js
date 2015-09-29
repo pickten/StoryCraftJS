@@ -1,25 +1,14 @@
-function saveAs(start,end){
+function refreshDoc(){
+  // Puts your doc into data -- but does not put it on the localstorage
   var o=splitText($('#doc').val())
-  var t=name||o.title
+  var t=o.title
   var l=o.text
   fixNotes()
   var n=presentNotes()
-  
 }
-function quickSave(){
-  saveCur(2);
-}
-function saveCur(name){
-  // Takes the currently opened file and overwrites the localstorage/cookie thing with it.
-  var o=splitText($('#doc').val())
-  var t=name||o.title
-  saveAs(1,t)
-}
-function saveAuto(name){
-  saveAs(name,name) // Shorthand
-}
+
 function saveAll(){
-  // Saves all docs
+  // Saves all docs in storage
 }
 function load(name){
   // Pulls the named file from local storage/cookie
@@ -76,7 +65,8 @@ function getAnchors(text){
 
 function refresh(){
   getAnchors(docs[current])
-  refreshExplorer(clone(anchors))
+  refreshDoc()
+  refreshExplorer(docs[current])
   refreshNotes(clone(anchors))
 }
 
