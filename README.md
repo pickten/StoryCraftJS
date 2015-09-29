@@ -35,3 +35,4 @@ In particular, with the following exceptions, features 10 and on are actually my
 - (4:30) Was away a bit, now html sort of has the core, and there's a bit of css.
 - (5:40) Yay I added some localstorage and cookies stuff, because don't we all want simpler saving stuff?
 - (note) I'll get gist saving at some point if I can figure out how to and how to make it more seamlessly work.
+- (10:30) I've learned I code terribly when tired, so I'm just commenting and writing trivial funcs.
