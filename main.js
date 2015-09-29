@@ -1,6 +1,19 @@
-function saveAs(name,name){}
+function saveAs(start,end){
+  var o=splitText($('#doc').val())
+  var t=name||o.title
+  var l=o.text
+  fixNotes()
+  var n=presentNotes()
+  
+}
+function quickSave(){
+  saveCur(2);
+}
 function saveCur(name){
-  splitText($('#doc').)// Takes the currently opened file and overwrites the localstorage/cookie thing with it.
+  // Takes the currently opened file and overwrites the localstorage/cookie thing with it.
+  var o=splitText($('#doc').val())
+  var t=name||o.title
+  saveAs(1,t)
 }
 function saveAuto(name){
   saveAs(name,name) // Shorthand
@@ -24,7 +37,7 @@ var position=[]
 function defVars(){
   position = []
   anchors = {}
-  docs = {0:{
+  docs = {1:{
     text:'',
     notes: ''
   }}
@@ -38,16 +51,16 @@ function defVars(){
       docs[j].notes=localStorage[i]
     }
   }
-  current = localStorage['cur']||0 //To signify that it hasn't been specified.
+  current = localStorage['cur']||1 //To signify that it hasn't been specified.
 }
 function defWithCookie(){
   anchors = {}
-  docs={0:{text:'',notes:''}}
-  current = 0
+  docs={1:{text:'',notes:''}}
+  current = 1
   var key=docCookies.keys()
   for(var i in key){
     if(i=='cur'){
-      current=docCookies.getItem(i)
+      current=docCookies.getItem(i)||1
     } else if(i.charAt(0)=='t') {
       docs[i.substring(1)].text=docCookies.getItem(i)
     } else if(i.charAt(0)=='a'){
