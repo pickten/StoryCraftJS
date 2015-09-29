@@ -1,6 +1,6 @@
 function saveAs(name,name){}
 function saveCur(name){
-  // Takes the currently opened file and overwrites the localstorage/cookie thing with it.
+  splitText($('#doc').)// Takes the currently opened file and overwrites the localstorage/cookie thing with it.
 }
 function saveAuto(name){
   saveAs(name,name) // Shorthand
