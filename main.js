@@ -3,8 +3,12 @@ function refreshDoc(){
   var o=splitText($('#doc').val())
   var t=o.title
   var l=o.text
-  fixNotes()
+  refreshNotes()
   var n=presentNotes()
+  docs[t]={
+    text: l,
+    notes: n
+  }
 }
 
 function saveAll(){
@@ -28,7 +32,7 @@ function defVars(){
   anchors = {}
   docs = {1:{
     text:'',
-    notes: ''
+    notes: []
   }}
   for(var i in localStorage){
     if(i.charAt(0)=='t'){
@@ -44,7 +48,7 @@ function defVars(){
 }
 function defWithCookie(){
   anchors = {}
-  docs={1:{text:'',notes:''}}
+  docs={1:{text:'',notes:[]}}
   current = 1
   var key=docCookies.keys()
   for(var i in key){
