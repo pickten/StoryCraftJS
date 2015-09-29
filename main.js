@@ -1,7 +1,22 @@
-function save(name){}
-function load(name){}
-function download(name){}
-function open(name,text){}
+function saveAs(name,name){}
+function saveCur(name){
+  // Takes the currently opened file and overwrites the localstorage/cookie thing with it.
+}
+function saveAuto(name){
+  saveAs(name,name) // Shorthand
+}
+function saveAll(){
+  // Saves all docs
+}
+function load(name){
+  // Pulls the named file from local storage/cookie
+}
+function download(name){
+  // I might cut this because copy-paste is easy and download is harder
+}
+function open(name,text){
+  // Pretty much going to be a New->copy->paste macro.
+}
 var anchors
 var docs
 var current
