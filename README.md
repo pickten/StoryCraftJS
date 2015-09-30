@@ -6,9 +6,7 @@ A JS port of StoryCraft, as found
 or are in a subfolder), 
 the core is not my idea, specifically features 1-9. They are from the original Storycraft, which this is an attempt to
 both port and possibly expand on.
-In particular, with the following exceptions, features 10 and on are actually my ideas:
-
-(none currently)
+However, features 10 and on are my ideas.
 
 ## Features
 
