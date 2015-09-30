@@ -11,23 +11,23 @@ In particular, with the following exceptions, features 10 and on are actually my
 (none currently)
 
 ## Features
-**Current Features:**
 
-**To be added:**
-
-1. Editing
-2. Saving
-3. Loading
-4. Downloading
-5. Uploading
-6. Story Explorer
-7. Notes
-8. Note viewer
-9. Auto-highlighting
-10. Maybe some sort of "$AnchorName=Value" syntax to boost the power of notes?
-11. Possible gist-saving (and loading? No idea how to automatically use gist)
+1. Editing (80%)
+2. Saving (30%)
+3. Loading (50%)
+4. Downloading (0%)
+5. Uploading (0%)
+6. Story Explorer (0%)
+7. Notes (0%)
+8. Note viewer (0%)
+9. Anchors/note "activeness" (0%)
+10. Custom Anchors (0%)
+11. Possible gist-saving (and loading? No idea how to automatically use gist) (0%)
 
 ## Changelog:
+
+### 9/29/15: Improvements
+- Some work was done, you can now see my features list with completion stats.
 
 ### 9/28/15: Initial commit (v0.0)
 
