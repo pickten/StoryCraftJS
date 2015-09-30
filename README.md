@@ -21,11 +21,13 @@ However, features 10 and on are my ideas.
 9. Anchors/note "activeness" (0%)
 10. Custom Anchors (0%)
 11. Possible gist-saving (and loading? No idea how to automatically use gist) (0%)
+12. | as the opposite of = (0%)
 
 ## Changelog:
 
-### 9/29/15: Improvements
+### 9/29/15: Improvements (v0.1)
 - Some work was done, you can now see my features list with completion stats.
+- Yes, this is 9/30. Whatever. Too busy today to do much anyways.
 
 ### 9/28/15: Initial commit (v0.0)
 
