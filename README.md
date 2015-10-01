@@ -31,8 +31,7 @@ However, features 10 and on are my ideas.
 - Found a jQuery function to handle finding the position, so that getAnchors can do its job
 - Also got presentNotes for saving/loading. This will be borkon because people might put --//-- in their notes. I'll
 probably get some sort of fix for this.
-- May do some more work later today.
---
+- May do some more work later today. --
 - Added some work for computing anchors at various points.
 
 ### 9/29/15: Improvements (v0.1)
