@@ -13,7 +13,7 @@ function refreshDoc(){
 /****************************
  * Saving/loading
  * 
- * 
+ * (rather boring)
  * **************************/
 function saveAll(){
   // Saves all docs in storage
@@ -25,7 +25,7 @@ function download(name){
   // I might cut this because copy-paste is easy and download is harder
 }
 function open(name,text){
-  // Pretty much going to be a New->copy->paste macro.
+  // Pretty much going to be a New->copy->paste->copy->paste macro.
 }
 
 /************************
@@ -82,9 +82,8 @@ function depth(text){
     i++
     var s=''
     var t=''
-    for(var j=0;j<i;j++){s+='=';t+='\\|'}
-    var reg=new RegExp('\n'+s)
-    var reg2=new RegExp('\n'+t)
+    var reg=new RegExp('\n'+repeat('=',i))
+    var reg2=new RegExp('\n'+repeat('\\|',i))
     done=!(reg.test(text)||reg2.test(text))
   }
   return i;
@@ -94,8 +93,24 @@ function getAnchors(text){
   var t = text.substring(0,n)
   var l=t.split('\n')
   var r=depth(text)+1
+  var i = r
   var a={}
-  a.push({r:l.shift()}) //Gets the title
+  a[r]=l.shift() //Gets the title, and gets it the hell out.
+  var lastindex=0
+  while(i>0){
+    var last=''
+    for(var j=lastindex;j<l.length;j++){
+      if((new RegExp(repeat('=',i))).test(l[j])){
+        lastindex=j
+        last=l[j].substring(i)
+      }
+      if(new RegExp(repeat('\\|',r-i)).test(l[j])){
+        lastindex=j
+        last=l[j].substring(r-i)
+      }
+    }
+    a[i]=last
+  }
 }
 
 function refresh(){
@@ -114,7 +129,7 @@ function refreshNotes(a){
 }
 
 function displayNotes(){
-  return docs[current].join('\n--//--\n')
+  return docs[current].join('\n--//--\n') // If people do this manually, it will be a shortcut for multi-note-creation.
 }
 
 /*************************
@@ -128,12 +143,17 @@ function clone(o){ // makes a duplicate so as to avoid trouble
   for(var i in o){a[i]=o[i]}
   return a;
 }
+function repeat(s,t){
+  var a=''
+  while(t>0){a+=s;t--}
+  return a
+}
 function supports_html5_storage() {
   try {
     return 'localStorage' in window && window['localStorage'] !== null;
   } catch (e) {
     return false;
   }
-} //Makes sure I can actually USE localstorage. If not, only 1 doc for that person :(
+} //Makes sure I can actually USE localstorage. If not, only 1 doc for that person, probably :(
 
 function selection(id){return document.getElementById(id).selectionStart}
