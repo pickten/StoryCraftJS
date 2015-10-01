@@ -25,6 +25,15 @@ However, features 10 and on are my ideas.
 
 ## Changelog:
 
+### 10/1/15: Parsing work (v0.1.1)
+- Not as much work done today as I'd like.
+- As expected, no time yesterday.
+- Found a jQuery function to handle finding the position, so that getAnchors can do its job
+- Also got presentNotes for saving/loading. This will be borkon because people might put --//-- in their notes. I'll
+probably get some sort of fix for this.
+- May do some more work later today.
+- Not a full .1 version increase because so little happened.
+
 ### 9/29/15: Improvements (v0.1)
 - Some work was done, you can now see my features list with completion stats.
 - Yes, this is 9/30. Whatever. Too busy today to do much anyways.
