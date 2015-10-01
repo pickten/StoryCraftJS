@@ -16,12 +16,12 @@ However, features 10 and on are my ideas.
 4. Downloading (0%)
 5. Uploading (0%)
 6. Story Explorer (0%)
-7. Notes (0%)
+7. Notes (5%)
 8. Note viewer (0%)
-9. Anchors/note "activeness" (0%)
-10. Custom Anchors (0%)
+9. Anchors/note "activeness" (1%)
+10. Custom Anchors (10%)
 11. Possible gist-saving (and loading? No idea how to automatically use gist) (0%)
-12. | as the opposite of = (0%)
+12. | as the opposite of = (5%)
 
 ## Changelog:
 
@@ -33,6 +33,8 @@ However, features 10 and on are my ideas.
 probably get some sort of fix for this.
 - May do some more work later today.
 - Not a full .1 version increase because so little happened.
+- --
+- Added some work for computing anchors at various points.
 
 ### 9/29/15: Improvements (v0.1)
 - Some work was done, you can now see my features list with completion stats.
