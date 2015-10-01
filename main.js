@@ -75,9 +75,27 @@ function defWithCookie(){
  * System functions
  * i.e. refreshing & parsing
  * ************************/
-
+function depth(text){
+  var i=-1
+  var done=false
+  while(!done){
+    i++
+    var s=''
+    var t=''
+    for(var j=0;j<i;j++){s+='=';t+='\\|'}
+    var reg=new RegExp('\n'+s)
+    var reg2=new RegExp('\n'+t)
+    done=!(reg.test(text)||reg2.test(text))
+  }
+  return i;
+}
 function getAnchors(text){
-  
+  var n = selection('text')
+  var t = text.substring(0,n)
+  var l=t.split('\n')
+  var r=depth(text)+1
+  var a={}
+  a.push({r:l.shift()}) //Gets the title
 }
 
 function refresh(){
@@ -118,23 +136,4 @@ function supports_html5_storage() {
   }
 } //Makes sure I can actually USE localstorage. If not, only 1 doc for that person :(
 
-// Lets me grab the position of the cursor.
-// Credit to http://stackoverflow.com/questions/2897155/get-cursor-position-in-characters-within-a-text-input-field
-// Second answer.
-(function($) {
-    $.fn.getCursorPosition = function() {
-        var input = this.get(0);
-        if (!input) return; // No (input) element found
-        if ('selectionStart' in input) {
-            // Standard-compliant browsers
-            return input.selectionStart;
-        } else if (document.selection) {
-            // IE
-            input.focus();
-            var sel = document.selection.createRange();
-            var selLen = document.selection.createRange().text.length;
-            sel.moveStart('character', -input.value.length);
-            return sel.text.length - selLen;
-        }
-    }
-})(jQuery);
+function selection(id){return document.getElementById(id).selectionStart}
