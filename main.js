@@ -98,7 +98,7 @@ function getAnchors(text){
   a[r]=l.shift() //Gets the title, and gets it the hell out.
   var lastindex=0
   while(i>0){
-    var last=''
+    var last=undefined
     for(var j=lastindex;j<l.length;j++){
       if((new RegExp(repeat('=',i))).test(l[j])){
         lastindex=j
