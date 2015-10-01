@@ -117,3 +117,24 @@ function supports_html5_storage() {
     return false;
   }
 } //Makes sure I can actually USE localstorage. If not, only 1 doc for that person :(
+
+// Lets me grab the position of the cursor.
+// Credit to http://stackoverflow.com/questions/2897155/get-cursor-position-in-characters-within-a-text-input-field
+// Second answer.
+(function($) {
+    $.fn.getCursorPosition = function() {
+        var input = this.get(0);
+        if (!input) return; // No (input) element found
+        if ('selectionStart' in input) {
+            // Standard-compliant browsers
+            return input.selectionStart;
+        } else if (document.selection) {
+            // IE
+            input.focus();
+            var sel = document.selection.createRange();
+            var selLen = document.selection.createRange().text.length;
+            sel.moveStart('character', -input.value.length);
+            return sel.text.length - selLen;
+        }
+    }
+})(jQuery);
