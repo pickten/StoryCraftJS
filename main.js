@@ -10,7 +10,11 @@ function refreshDoc(){
     notes: n
   }
 }
-
+/****************************
+ * Saving/loading
+ * 
+ * 
+ * **************************/
 function saveAll(){
   // Saves all docs in storage
 }
@@ -23,6 +27,11 @@ function download(name){
 function open(name,text){
   // Pretty much going to be a New->copy->paste macro.
 }
+
+/************************
+ * Variable declarations
+ * 
+ * **********************/
 var anchors
 var docs
 var current
@@ -62,6 +71,10 @@ function defWithCookie(){
     }
   }
 }
+/**************************
+ * System functions
+ * i.e. refreshing & parsing
+ * ************************/
 
 function getAnchors(text){
   
@@ -82,6 +95,9 @@ function refreshNotes(a){
   
 }
 
+function displayNotes(){
+  return docs[current].join('\n--//--\n')
+}
 
 /*************************
  * Helper funcs
