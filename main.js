@@ -109,7 +109,12 @@ function getAnchors(text){
         last=l[j].substring(r-i)
       }
     }
-    a[i]=last
+    a[i]=last||a[i+1]
+  }
+  for(var i in l){
+    if(testLn(l[i])){ // Placeholder
+      
+    }
   }
 }
 
@@ -157,3 +162,6 @@ function supports_html5_storage() {
 } //Makes sure I can actually USE localstorage. If not, only 1 doc for that person, probably :(
 
 function selection(id){return document.getElementById(id).selectionStart}
+function testLn(line){
+  
+}
