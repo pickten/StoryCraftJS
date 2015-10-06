@@ -5,11 +5,7 @@ function refreshDoc(){
   var l=o.text
   getAnchors(docs[current])
   refreshNotes(clone(anchors))
-  var n=presentNotes()
-  docs[t]={
-    text: l,
-    notes: n
-  }
+  docs[t].text=l
 }
 /****************************
  * Saving/loading
