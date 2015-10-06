@@ -33,6 +33,7 @@ var anchors
 var docs
 var current
 var position=[]
+var curNote=-1
 function defVars(){
   position = []
   anchors = {}
@@ -113,8 +114,9 @@ function getAnchorsInner(t){
     a[i]=last||a[i+1]
   }
   for(var i in l){
-    if(testLn(l[i])){ // Placeholder for when custom anchor support is added.
-      
+    var t = testLn(l[i])
+    if(t){ // Placeholder for when custom anchor support is added.
+      a[t[0]]=t[1]
     }
   }
 }
@@ -143,7 +145,7 @@ function refreshNotes(a){
   }
   docs[current].notes=anot
   for(var i in anot){
-    anoted[i]=[anot[i],checkAnchor(a,anot[i])]
+    anoted[i]=[anot[i],checkAnchor(a,anot[i]),i]
   }
   refreshNoteList(anoted)
 }
@@ -153,8 +155,17 @@ function refreshNoteList(list){
     var i=list.shift()
     var name=i[0].split('\n')[0]
     var b=i[1]
-    a+="<div class="+(b ? "'activeNote'" : "'passiveNote'")+">"+name+"</div>" //Need onclicks!!! Figure this out later?
+    var c=i[2]
+    a+="<div id='note"+c+"'"+"'onclick='switchNote("+c+")'"
+    a+="class="+(b ? "'activeNote'" : "'passiveNote'")+">"+name+"</div>" //Need onclicks!!! Figure this out later?
   }
+  $('div').removeClass('openNote')
+  $('.class'+activeNote).addClass('openNote') // Not sure yet what this'll do.
+} // Probably a bug here
+function switchNote(id){
+  activeNote=id
+  $('div').removeClass('openNote')
+  $('.class'+id).addClass('openNote')
 }
 
 function displayNotes(){
