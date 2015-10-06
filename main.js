@@ -130,7 +130,10 @@ function refreshExplorer(a){
 }
 
 function refreshNotes(a){
-  
+  var anot=clone(docs[current.notes])
+  for(var i in docs[current].notes){
+    anot=anot.concat(docs[current].notes[i].split('\n--//--\n'))
+  }
 }
 
 function displayNotes(){
