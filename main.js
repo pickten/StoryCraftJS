@@ -3,7 +3,8 @@ function refreshDoc(){
   var o=splitText($('#doc').val())
   var t=o.title
   var l=o.text
-  refreshNotes()
+  getAnchors(docs[current])
+  refreshNotes(clone(anchors))
   var n=presentNotes()
   docs[t]={
     text: l,
@@ -91,6 +92,10 @@ function depth(text){
 function getAnchors(text){
   var n = selection('text')
   var t = text.substring(0,n)
+  return getAnchors(t)
+}
+function getAnchorsInner(t){
+  var text=t
   var l=t.split('\n')
   var r=depth(text)+1
   var i = r
@@ -112,10 +117,15 @@ function getAnchors(text){
     a[i]=last||a[i+1]
   }
   for(var i in l){
-    if(testLn(l[i])){ // Placeholder
+    if(testLn(l[i])){ // Placeholder for when custom anchor support is added.
       
     }
   }
+}
+function checkAnchor(a, text){
+  var b=getAnchorsInner(text)
+  for(var i in b){if(b[i]!==a[i]){return false}}
+  return true
 }
 
 function refresh(){
@@ -130,10 +140,19 @@ function refreshExplorer(a){
 }
 
 function refreshNotes(a){
-  var anot=clone(docs[current.notes])
+  var anot=[]
+  var anoted=[]
   for(var i in docs[current].notes){
     anot=anot.concat(docs[current].notes[i].split('\n--//--\n'))
   }
+  docs[current].notes=anot
+  for(var i in anot){
+    anoted[i]=[anot[i],checkAnchor(a,anot[i])]
+  }
+  refreshNoteView(anoted)
+}
+function refreshNoteView(list){
+  
 }
 
 function displayNotes(){
