@@ -145,10 +145,16 @@ function refreshNotes(a){
   for(var i in anot){
     anoted[i]=[anot[i],checkAnchor(a,anot[i])]
   }
-  refreshNoteView(anoted)
+  refreshNoteList(anoted)
 }
-function refreshNoteView(list){
-  
+function refreshNoteList(list){
+  var a=""
+  while(list.length){
+    var i=list.shift()
+    var name=i[0].split('\n')[0]
+    var b=i[1]
+    a+="<div class="+(b ? "'activeNote'" : "'passiveNote'")+">"+name+"</div>" //Need onclicks!!! Figure this out later?
+  }
 }
 
 function displayNotes(){
