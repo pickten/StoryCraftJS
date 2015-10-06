@@ -16,14 +16,18 @@ However, features 10 and on are my ideas.
 4. Downloading (0%)
 5. Uploading (0%)
 6. Story Explorer (0%)
-7. Notes (5%)
-8. Note viewer (0%)
+7. Notes (10%)
+8. Note viewer (10%)
 9. Anchors/note "activeness" (1%)
 10. Custom Anchors (10%)
 11. Possible gist-saving (and loading? No idea how to automatically use gist) (0%)
 12. | as the opposite of = (5%)
 
 ## Changelog:
+
+### 10/5/15: Back to work.
+- Was sick. I'm better now, but nothing happened over the weekend.
+- Some work got done today with notes.
 
 ### 10/1/15: Parsing work (v0.2)
 - Not as much work done today as I'd like.
