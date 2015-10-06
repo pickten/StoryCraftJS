@@ -16,14 +16,20 @@ However, features 10 and on are my ideas.
 4. Downloading (0%)
 5. Uploading (0%)
 6. Story Explorer (0%)
-7. Notes (10%)
-8. Note viewer (10%)
+7. Notes (15%)
+8. Note viewer (20%)
 9. Anchors/note "activeness" (1%)
 10. Custom Anchors (10%)
 11. Possible gist-saving (and loading? No idea how to automatically use gist) (0%)
 12. | as the opposite of = (5%)
 
 ## Changelog:
+
+### 10/6/15: Avoiding ALL the decisions (v0.3)
+- Getting back into it still.
+- Notes are getting along pretty well now
+- There's a note-sidebar generator, even.
+- Not looking forwards to more general nav/docs
 
 ### 10/5/15: Back to work.
 - Was sick. I'm better now, but nothing happened over the weekend.
