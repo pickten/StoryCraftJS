@@ -22,3 +22,15 @@
   float: left;
   height:100%;
 }
+.activeNote {
+  width: 100%;
+  color: gray;
+}
+.passiveNote {
+  width: 100%;
+  color:black;
+}
+.openNote {
+  width: 100%;
+  font-style:italic;
+}
