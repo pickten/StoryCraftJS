@@ -152,7 +152,14 @@ function sectionsOf(text){
 }
 
 function refreshExplorer(a){
-  
+  var sec = sectionsOf(a)
+  var a = ""
+  if(sec.length){
+    
+  }
+  else {
+    a+="<div class='sec' id='sec0'><it>Your title here</it></div>"
+  }
 }
 
 function refreshNotes(a){
