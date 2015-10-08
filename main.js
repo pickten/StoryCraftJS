@@ -73,6 +73,9 @@ function defWithCookie(){
  * System functions
  * i.e. refreshing & parsing
  * ************************/
+ /***********
+  * Parsing
+  * *********/
 function depth(text){
   var i=-1
   var done=false
@@ -126,12 +129,7 @@ function checkAnchor(a, text){
   return true
 }
 
-function refresh(){
-  getAnchors(docs[current])
-  refreshDoc()
-  refreshExplorer(docs[current])
-  refreshNotes(clone(anchors))
-}
+
 
 function sectionsOf(text){
   var r = depth(text)
@@ -145,21 +143,45 @@ function sectionsOf(text){
     } // NOTE: THIS IS BACKWARDS COMPARED TO THE ANCHORS!!!
     x--
     if(x){
-      t.push([line.substring(0,x),x])
+      t.push([line.substring(x)||'<it>Untitled</it>',x])
     }
   }
   return a
 }
-
+/************
+ * Refreshing
+ * **********/
+ function refresh(){
+  getAnchors(docs[current])
+  refreshDoc()
+  refreshExplorer(docs[current])
+  refreshNotes(clone(anchors))
+}
 function refreshExplorer(a){
   var sec = sectionsOf(a)
-  var a = ""
+  var secs=clone(sec)
+  $('#Explorer').html('') //:(
+  $('#Explorer').append((function(i){
+    var t="<div class='sec' id='sec0'>"
+    if(!i){t+="<it>Your title here</it></div>"} else {
+      t+=i+"</div>"
+    }
+    return t
+  })(sec[0][0]))
   if(sec.length){
-    
+    var recents=[sec.shift()]
+    for(var i in sec){
+      var j=sec.shift()
+      recents=recents.subarray(0,j[1]).push(j[1])
+      $('#sec'+recents[recents.length-2][1]).append("<div class='sec' id='sec"+j[1]+"'>"+j[0]+"</div>")
+    }
   }
-  else {
-    a+="<div class='sec' id='sec0'><it>Your title here</it></div>"
-  }
+  $('.sec').click((function(arr){
+    return function(){ // NEEDS TO BE DONE
+      var id=Number($(this).attr('id').split('sec').pop())
+      repeat('=',arr[id][1]) // closures ftw
+    }
+  })(sec))
 }
 
 function refreshNotes(a){
