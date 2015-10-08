@@ -15,19 +15,21 @@ However, features 10 and on are my ideas.
 3. Loading (50%)
 4. Downloading (0%)
 5. Uploading (0%)
-6. Story Explorer (0%)
-7. Notes (15%)
-8. Note viewer (20%)
+6. Story Explorer (30%)
+7. Notes (25%)
+8. Note viewer (40%)
 9. Anchors/note "activeness" (1%)
 10. Custom Anchors (10%)
 11. Possible gist-saving (and loading? No idea how to automatically use gist) (0%)
-12. | as the opposite of = (5%)
+12. | as the opposite of = (25%)
 
 ## Changelog:
 
-### 10/7/15: I made a decision (v0.4)
+### 10/7-8/15: I made a decision (v0.4)
 - Tiny update today (yesterday, technically -- whatever)
 - I got a tentative css to differentiate active/passive/open notes.
+- Today, for real, I got most of the explorer's stuff together.
+- The onclick scroll is not done yet, and I've not got any sort of collapsing/image stuff yet but whatever.
 
 ### 10/6/15: Avoiding ALL the decisions (v0.3)
 - Getting back into it still.
