@@ -25,6 +25,10 @@ However, features 10 and on are my ideas.
 
 ## Changelog:
 
+### 10/7/15: I made a decision (v0.4)
+- Tiny update today (yesterday, technically -- whatever)
+- I got a tentative css to differentiate active/passive/open notes.
+
 ### 10/6/15: Avoiding ALL the decisions (v0.3)
 - Getting back into it still.
 - Notes are getting along pretty well now
