@@ -133,6 +133,24 @@ function refresh(){
   refreshNotes(clone(anchors))
 }
 
+function sectionsOf(text){
+  var r = depth(text)
+  t=text.split('\n')
+  var a=[[t.shift(),0]]
+  while(t.length){
+    var line=t.shift()
+    var x=0
+    while((new RegExp(repeat('\\|',x))).test(line)||(new RegExp(repeat('=',r-x))).test(line)){
+      x++
+    } // NOTE: THIS IS BACKWARDS COMPARED TO THE ANCHORS!!!
+    x--
+    if(x){
+      t.push([line.substring(0,x),x])
+    }
+  }
+  return a
+}
+
 function refreshExplorer(a){
   
 }
@@ -200,3 +218,11 @@ function selection(id){return document.getElementById(id).selectionStart}
 function testLn(line){
   
 }
+
+$.fn.scrollView = function () {
+    return this.each(function () {
+        $('html, body').animate({
+            scrollTop: $(this).offset().top
+        }, 1000);
+    });
+} // From a stackexchange post
