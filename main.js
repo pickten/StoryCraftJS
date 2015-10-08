@@ -173,7 +173,7 @@ function refreshExplorer(a){
     for(var i in sec){
       var j=sec.shift()
       recents=recents.subarray(0,j[1]).push(j[1])
-      $('#sec'+recents[recents.length-2][1]).append("<div class='sec' id='sec"+j[1]+"'>"+j[0]+"</div>")
+      $('#sec'+recents[recents.length-2][1]).append("<div class='sec' id='sec"+j[1]+"'>"+repeat('|',j[1])+j[0]+"</div>")
     }
   }
   $('.sec').click((function(arr){
