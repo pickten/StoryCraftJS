@@ -1,3 +1,7 @@
-/**********
- * In which we handle what actually happens when people interact with the footer
- * ********/
+/********************************
+ * In which we create the footer 
+ * and onload stuff
+ * *****************************/
+function footerClick(){
+  
+}
