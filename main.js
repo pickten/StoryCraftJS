@@ -176,12 +176,13 @@ function refreshExplorer(a){
       $('#sec'+recents[recents.length-2][1]).append("<div class='sec' id='sec"+j[1]+"'>"+repeat('|',j[1])+j[0]+"</div>")
     }
   }
-  $('.sec').click((function(arr){
-    return function(){ // NEEDS TO BE DONE
-      var id=Number($(this).attr('id').split('sec').pop())
-      repeat('=',arr[id][1]) // closures ftw
-    }
-  })(sec))
+  $('.sec').click((function(arr){return function(){ // NEEDS TO BE CHECKED
+    var id=Number($(this).attr('id').split('sec').pop())
+    var text=$('#doc').val()
+    $('#doc').setCaret(new RegExp(repeat('\\|',arr[id][1])).exec(text).index||
+    (new RegExp(repeat('=',depth(text)-arr[id][1]))).exec(text).index) //Damn that's long. Hope it works?
+    // mostly useless closures ftw
+  }})(sec))
 }
 
 function refreshNotes(a){
@@ -235,6 +236,12 @@ function repeat(s,t){
   while(t>0){a+=s;t--}
   return a
 }
+
+function testLn(line){
+  
+}
+
+//Stuff below here is stuff I found in misc places online
 function supports_html5_storage() {
   try {
     return 'localStorage' in window && window['localStorage'] !== null;
@@ -244,9 +251,7 @@ function supports_html5_storage() {
 } //Makes sure I can actually USE localstorage. If not, only 1 doc for that person, probably :(
 
 function selection(id){return document.getElementById(id).selectionStart}
-function testLn(line){
-  
-}
+
 
 $.fn.scrollView = function () {
     return this.each(function () {
@@ -255,3 +260,20 @@ $.fn.scrollView = function () {
         }, 1000);
     });
 } // From a stackexchange post
+
+new function($) {
+  $.fn.setCaret = function(pos) {
+    if (this.setSelectionRange) {
+      this.setSelectionRange(pos, pos);
+    } else if (this.createTextRange) {
+      var range = this.createTextRange();
+      range.collapse(true);
+      if(pos < 0) {
+        pos = $(this).val().length + pos;
+      }
+      range.moveEnd('character', pos);
+      range.moveStart('character', pos);
+      range.select();
+    }
+  }
+}(jQuery); // Also from stackexchange
