@@ -8,6 +8,12 @@ the core is not my idea, specifically features 1-9. They are from the original S
 both port and possibly expand on.
 However, features 10 and on are my ideas.
 
+**WARNING:** (I'll remove this later) This is entirely UNTESTED. When I feel satisfied with the amount of features
+implemented, I will begin testing and remove this note. However, until then, I make no guarantees that this will even work
+at it's most basic level. Additionally, until testing commences, I will not be managing a gh-pages branch (too much hassle),
+so you'll have to run it yourself (perhaps by forking, then creating a gh-pages branch and finding the github pages link
+in your settings)
+
 ## Features
 
 1. Editing (80%)
