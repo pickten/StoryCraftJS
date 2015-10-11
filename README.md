@@ -31,6 +31,10 @@ in your settings)
 
 ## Changelog:
 
+### 10/11: Got sick again
+- I have the worst luck for some things (cough cough Eyeless Skull cough cough 5 weeks of searching cough cough)
+- Got some custom anchor syntax worked out, so not a total loss.
+
 ### 10/7-8/15: I made a decision (v0.4)
 - Tiny update today (yesterday, technically -- whatever)
 - I got a tentative css to differentiate active/passive/open notes.
