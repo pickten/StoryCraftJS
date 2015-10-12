@@ -2,8 +2,7 @@
 A JS port of StoryCraft, as found
 [here.](https://www.reddit.com/r/writing/comments/3mhd3s/storycraft_a_simple_story_writing_software_ive/)
 
-**Note:** While this is entirely my code (not counting libraries, etc., which are either loaded from another site
-or are in a subfolder), 
+**Note:** While this is entirely my code (not counting libraries, etc., which are clearly marked), 
 the core is not my idea, specifically features 1-9. They are from the original Storycraft, which this is an attempt to
 both port and possibly expand on.
 However, features 10 and on are my ideas.
