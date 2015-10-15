@@ -124,16 +124,19 @@ function getAnchorsInner(t){
       }
       if(test==':'){
         var split = l[i].split(':')
-        var key=true
+        var key=false
         while(split.length){
           var spot=split.shift()
-          if(key){
+          if(!key){
             while(spot=='' | spot.charAt(spot.length-1)=='-'){spot=split.shift()} //Finding the next key
             if(/ +- +/.test(spot)){split=spot.split(/ +- +/).concat(split); spot=spot.split(/ +- +/)[0]}
+            key=spot
           } else {
             
+            
+            
+           key = false 
           }
-          key=!key
         }
       }
     }
