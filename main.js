@@ -117,9 +117,25 @@ function getAnchorsInner(t){
     a[i]=last||a[i+1]
   }
   for(var i in l){
-    var t = testLn(l[i])
-    if(t){ // Placeholder for when custom anchor support is added.
-      a[t[0]]=t[1]
+    var test = testLn(l[i])
+    if(test){ // Placeholder for when custom anchor support is added.
+      if(test=='!'){
+        
+      }
+      if(test==':'){
+        var split = l[i].split(':')
+        var key=true
+        while(split.length){
+          var spot=split.shift()
+          if(key){
+            while(spot=='' | spot.charAt(spot.length-1)=='-'){spot=split.shift()} //Finding the next key
+            if(/ +- +/.test(spot)){split=spot.split(/ +- +/).concat(split); spot=spot.split(/ +- +/)[0]}
+          } else {
+            
+          }
+          key=!key
+        }
+      }
     }
   }
 }
@@ -238,7 +254,10 @@ function repeat(s,t){
 }
 
 function testLn(line){
-  
+  if(['!', ':'].indexOf(line.charAt(0)) >=0){
+    return line.charAt(0)
+  }
+  return false
 }
 
 //Stuff below here is stuff I found in misc places online
