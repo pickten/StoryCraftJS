@@ -42,16 +42,16 @@ function defVars(){
     notes: []
   }}
   for(var i in localStorage){
-    if(i.charAt(0)=='t'){
+    if(i.substring(0,'StoryCraftJS/t'.length)=='StoryCraftJS/t'){
       var j=i.substring(1);
       docs[j].text=localStorage[i]
     }
-    if(i.charAt(0)=='a'){
+    if(i.substring(0,'StoryCraftJS/t'.length)=='StoryCraftJS/a'){
       var j=i.substring(1);
       docs[j].notes=localStorage[i]
     }
   }
-  current = localStorage['cur']||1 //To signify that it hasn't been specified.
+  current = localStorage['StoryCraftJS/cur']||1 //To signify that it hasn't been specified.
 }
 function defWithCookie(){
   anchors = {}
@@ -65,7 +65,7 @@ function defWithCookie(){
       docs[i.substring(1)].text=docCookies.getItem(i)
     } else if(i.charAt(0)=='a'){
       var j=i.substring(1);
-      docs[j].notes=localStorage[i]
+      docs[j].notes=docCookies.getItem(i)
     }
   }
 }
